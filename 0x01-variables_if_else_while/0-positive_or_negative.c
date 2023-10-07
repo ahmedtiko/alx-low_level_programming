@@ -2,7 +2,13 @@
 #include <time.h>
 #include <stdio.h>
 
-/* betty style doc for function main goes there */
+	/**
+	 * This is the preferred style for multi-line
+	 * comments in C source code.
+	 * 
+	 * Description:  if else function to determine output number is positive or negative,
+	 * return 0 (success)
+	 */
 int main(void)
 {
 	int n;
