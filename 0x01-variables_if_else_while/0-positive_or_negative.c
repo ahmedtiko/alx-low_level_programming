@@ -1,14 +1,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include <stdio.h>
-
-	/**
-	 * This is the preferred style for multi-line
-	 * comments in C source code.
-	 * 
-	 * Description:  if else function to determine output number is positive or negative,
-	 * return 0 (success)
-	 */
+/*if else function implementation*/ 
 int main(void)
 {
 	int n;
