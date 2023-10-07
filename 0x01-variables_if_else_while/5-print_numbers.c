@@ -1,9 +1,9 @@
 #include <stdio.h>
 
 /**
- * main funtion prints single digit numbers
+ * main - Prints numbers from 0 to 9.
  *
- * return alwaus 0 (success)
+ * Return: Always 0 (Success)
  */
 int main(void)
 {
