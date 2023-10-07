@@ -1,4 +1,5 @@
 #include <stdio.h>
+
 /**
  * main funtion prints single digit numbers
  *
@@ -12,7 +13,7 @@ int main(void)
 	{
 		printf("%d", i);
 	}
-	
+
 	putchar('\n');
 	return (0);
 }
