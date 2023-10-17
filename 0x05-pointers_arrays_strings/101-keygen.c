@@ -25,33 +25,38 @@ int main()
 {
     const char uppercase_letters[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     const char digits[] = "0123456789";
-    int num_uppercase = 7;  // Example: 7 uppercase letters
-    int num_digits = 3;     // Example: 3 digits
-    int total_length = 10;  // Fixed length required by 101-crackme
+    int num_uppercase = 7;
+    int num_digits = 3;
+    int total_length = 10;
+    int i, j;
+    char temp;
 
     srand(time(NULL));
 
-    char password[11];  // One extra character for the null terminator
+    char password[11];
 
-    if (total_length != num_uppercase + num_digits) {
+    if (total_length != num_uppercase + num_digits) 
+    {
         printf("Invalid password length.\n");
         return 1;
     }
 
-    for (int i = 0; i < num_uppercase; i++) {
+    for (i = 0; i < num_uppercase; i++) 
+    {
         password[i] = random_char(uppercase_letters, sizeof(uppercase_letters) - 1);
     }
 
-    for (int i = num_uppercase; i < total_length; i++) {
+    for (i = num_uppercase; i < total_length; i++) 
+    {
         password[i] = random_char(digits, sizeof(digits) - 1);
     }
 
     password[total_length] = '\0';
 
-    // Shuffle the password to make it random
-    for (int i = 0; i < total_length - 1; i++) {
-        int j = i + rand() % (total_length - i);
-        char temp = password[i];
+    for (i = 0; i < total_length - 1; i++) 
+    {
+        j = i + rand() % (total_length - i);
+        temp = password[i];
         password[i] = password[j];
         password[j] = temp;
     }
