@@ -30,10 +30,9 @@ int main()
     int total_length = 10;
     int i, j;
     char temp;
+    char password[11];
 
     srand(time(NULL));
-
-    char password[11];
 
     if (total_length != num_uppercase + num_digits) 
     {
