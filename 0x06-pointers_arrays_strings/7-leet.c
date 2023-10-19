@@ -8,22 +8,22 @@
   *Return: value of n
  */
 
-char *leet(char *str) 
+char *leet(char *n) 
 {
-	char *leetChars = "aAeEoOtTlL";
-	char *leetReplacements = "4433007711";
+	char leetChars[] = "aAeEoOtTlL";
+	char leetReplacements[] = "4433007711";
 	int i, j;
 
-	for (i = 0; str[i] != '\0'; i++) 
+	for (i = 0; n[i] != '\0'; i++) 
 	{
-		for (j = 0; leetChars[j] < 10; j++)
+		for (j = 0; j < 10; j++)
 		{
-			if (str[i] == leetChars[j])
+			if (n[i] == leetChars[j])
 			{
-				str[i] = leetReplacements[j];
+				n[i] = leetReplacements[j];
 			}
 		}
 	}
 
-	return (str);
+	return (n);
 }
