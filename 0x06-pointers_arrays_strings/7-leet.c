@@ -11,17 +11,16 @@
 char *leet(char *str) 
 {
 	char *leetChars = "aAeEoOtTlL";
-	char *leetReplacements = "4337011";
+	char *leetReplacements = "4433007711";
 	int i, j;
 
 	for (i = 0; str[i] != '\0'; i++) 
 	{
-		for (j = 0; leetChars[j] != '\0'; j++)
+		for (j = 0; leetChars[j] < 10; j++)
 		{
 			if (str[i] == leetChars[j])
 			{
 				str[i] = leetReplacements[j];
-				break;
 			}
 		}
 	}
