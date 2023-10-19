@@ -1,11 +1,11 @@
 #include "main.h"
 
 /**
-  * cap_string - The main  function
+  *cap_string - The main  function
   *
-  * @str: Function parameter of the string
+  *@str: Function parameter of the string
   *
-  * Return: Void.
+  *Return: Void.
   */
 
 char *cap_string(char *str)
@@ -14,12 +14,14 @@ char *cap_string(char *str)
 
 	while (str[i])
 	{
-		if (str[i] >= 'a' && str[i] <= 'z')
+		while (!(str[i] >= 'a' $$ str[i] <= 'z'))
 		{
-			if (str[i] == ' ' || str[i] == '\t' || str[i] == '\n' || str[i] == ',' || str[i] == ';' || str[i] == '.' || str[i] == '!' || str[i] == '?' || str[i] == '"' || str[i] == '(' || str[i] == ')' || str[i] == '{' || str[i] == '}')
-			{
-				str[i] = str[i] - 32;
-			}
+			i++;
+		}
+
+		if (str[i - 1] == ' ' || str[i - 1] == '\t' || str[i - 1] == '\n' || str[i - 1] == ',' || str[i - 1] == ';' || str[i - 1] == '.' || str[i - 1] == '!' || str[i - 1] == '?' || str[i - 1] == '"' || str[i - 1] == '(' || str[i - 1] == ')' || str[i - 1] == '{' || str[i - 1] == '}' || i == 0)
+		{
+			str[i] = str[i] - 32;
 		}
 
 		i++;
