@@ -3,7 +3,7 @@
 /**
   *leet - main function
   *
-  * @n: Function parameter
+  *@n: Function parameter
   *
   *Return: value of n
  */
@@ -14,7 +14,7 @@ char *leet(char *n)
 	char leetReplacements[] = "4433007711";
 	int i, j;
 
-	for (i = 0; n[i] != '\0'; i++) 
+	for (i = 0; n[i] != '\0'; i++)
 	{
 		for (j = 0; j < 10; j++)
 		{
