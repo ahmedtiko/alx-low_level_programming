@@ -8,7 +8,7 @@
   *Return: value of n
  */
 
-char *leet(char *n) 
+char *leet(char *n)
 {
 	char leetChars[] = "aAeEoOtTlL";
 	char leetReplacements[] = "4433007711";
