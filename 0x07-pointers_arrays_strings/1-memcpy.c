@@ -1,15 +1,15 @@
 #include "main.h"
 
 /**
- * _memcpy - main function prototype
+ *_memcpy - main function prototype
  * 
- * @src: source parameter
+ *@src: source parameter
  *
- * @dest: destination parameter
+ *@dest: destination parameter
  *
- * @n function parameter
+ *@n function parameter
  *
- * Return: copied memory
+ *Return: copied memory
  */
 
 char *_memcpy(char *dest, char *src, unsigned int n)
