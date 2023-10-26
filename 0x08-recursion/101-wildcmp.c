@@ -1,30 +1,30 @@
 #include "main.h"
 
 /**
- * wildcmp_recursive - recursively compare two strings with wildcard
+ * wc_r - recursively compare two strings with wildcard
  * @s1: first string
  * @s2: second string with wildcards
- * @s1_index: current index in s1
- * @s2_index: current index in s2
- * @star_index: index of the last '*'
+ * @s1_i: current index in s1
+ * @s2_i: current index in s2
+ * @star_i: index of the last '*'
  * Return: true if strings can be considered identical, false otherwise
  */
 
-bool wildcmp_recursive(char *s1, char *s2, int s1_index, int s2_index, int star_index)
+bool wc_r(char *s1, char *s2, int s1_i, int s2_i, int star_i)
 {
-	if (s1[s1_index] == '\0' && s2[s2_index] == '\0')
+	if (s1[s1_i] == '\0' && s2[s2_i] == '\0')
 	{
 		return (true);
 	}
-	else if (s2[s2_index] == '*')
+	else if (s2[s2_i] == '*')
 	{
-		star_index = s2_index;
-		s2_index++;
+		star_i = s2_i;
+		s2_i++;
 	}
 
-	if (s1[s1_index] != '\0' && (s2[s2_index] == '?' || s1[s1_index] == s2[s2_index]))
+	if (s1[s1_i] != '\0' && (s2[s2_i] == '?' || s1[s1_i] == s2[s2_i]))
 	{
-		if (wildcmp_recursive(s1, s2, s1_index + 1, star_index, star_index))
+		if (wc_r(s1, s2, s1_i + 1, star_i, star_i))
 		{
 			return (true);
 		}
@@ -42,5 +42,5 @@ bool wildcmp_recursive(char *s1, char *s2, int s1_index, int s2_index, int star_
 
 int wildcmp(char *s1, char *s2)
 {
-	return (wildcmp_recursive(s1, s2, 0, 0, -1) ? 1 : 0);
+	return (wc_r(s1, s2, 0, 0, -1) ? 1 : 0);
 }
