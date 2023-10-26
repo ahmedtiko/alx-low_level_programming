@@ -3,7 +3,7 @@
 /**
  * is_divisible - checks if a number is divisible by another number
  * @n: the number to be checked
- * @divisor: the number to divide by
+ * @div: the number to divide by
  * Return: 1 if divisible, 0 if not
  */
 
@@ -22,7 +22,7 @@ int is_divisible(int n, int div)
 		return (1);
 	}
 
-	return is_divisible(n, div - 1);
+	return (is_divisible(n, div - 1));
 }
 
 /**
