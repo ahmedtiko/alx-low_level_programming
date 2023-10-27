@@ -1,5 +1,12 @@
 #include "main.h"
 
+/**
+ * main - main function
+ * @argc: Input parameter
+ * @argv[]: Input array
+ * Return: 0 when successful
+ */
+
 int main(int argc, char *argv[])
 {
 	if (argc > 0)
