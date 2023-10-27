@@ -1,6 +1,6 @@
 #include "main.h"
 
-int main(int argc, char *argc[])
+int main(int argc, char *argv[])
 {
 	int n1, n2, r;
 	if (argc != 3)
