@@ -41,9 +41,7 @@ int main(int argc, char *argv[])
 		return (0);
 	}
 
-	int sum;
-
-	sum = 0;
+	int sum = 0;
 
 	for (i = 1; i < argc; i++)
 	{
