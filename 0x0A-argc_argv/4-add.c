@@ -1,5 +1,31 @@
 #include "main.h"
-#include <ctype.h>
+
+/**
+ * is_positive_number - Check if a string is a positive number.
+ * @str: The string to check.
+ *
+ * Return: 1 if str is a positive number, 0 otherwise.
+ */
+
+int is_positive_number(char *str)
+{
+	int i;
+
+	i = 0;
+
+	while (str[i])
+	{
+		if (!isdigit(str[i]))
+		{
+			return (0);
+		}
+
+		i++;
+	}
+
+	return (1);
+}
+
 /**
  * main - Entry point of the program
  * @argc: The number of command-line arguments
@@ -9,36 +35,27 @@
 
 int main(int argc, char *argv[])
 {
-	if (argc == 1)
+	if (argc < 2)
 	{
 		printf("0\n");
 		return (0);
 	}
 
-	int sum, i, num, j;
+	int sum;
 
 	sum = 0;
 
 	for (i = 1; i < argc; i++)
 	{
-		num = 0;
-		j = 0;
-
-		while (argv[i][j] != '\0')
+		if (!is_positive_number(argv[i]))
 		{
-			if (!isdigit(argv[i][j]))
-			{
-				printf("Error\n");
-				return (1);
-			}
-
-			num = num * 10 + (argv[i][j] - '0');
-			j++;
+			printf("Error\n");
+			return (1);
 		}
 
-		sum += num;
+		sum += atoi(argv[i]);
 	}
 
-	printf("%d\n", num);
+	printf("%d\n", sum);
 	return (0);
 }
