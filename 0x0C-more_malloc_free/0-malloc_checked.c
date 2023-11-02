@@ -14,7 +14,7 @@ void *malloc_checked(unsigned int b)
 
 	if (ptr == NULL)
 	{
-		_putchar("Error: malloc failed\n");
+		dprintf(STDERR_FILENO, "Error: malloc failed\n");
 		exit(98);
 	}
 
