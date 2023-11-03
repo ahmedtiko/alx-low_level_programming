@@ -3,6 +3,7 @@
 #include <stddef.h>
 #include <stdbool.h>
 #include <unistd.h>
+#include <ctype.h>
 #ifndef MAIN_H
 #define MAIN_H
 
