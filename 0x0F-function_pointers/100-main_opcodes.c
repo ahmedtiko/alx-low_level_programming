@@ -19,7 +19,7 @@ int main(int argc, char *argv[])
 		exit(2);
 	}
 
-	for (int i = 0; i < num_bytes; i++)
+	for (i = 0; i < num_bytes; i++)
 	{
 		printf("%02x", main_opcodes[i]);
 	
