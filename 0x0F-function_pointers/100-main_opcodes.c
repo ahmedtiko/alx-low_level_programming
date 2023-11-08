@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 int main(int argc, char *argv[])
 {
@@ -17,6 +18,14 @@ int main(int argc, char *argv[])
 	{
 		fprintf(stderr, "Error\n");
 		exit(2);
+	}
+
+	unsigned char *main_opcodes = (unsigned char *)&main;
+
+	if (num_bytes > strlen((const char *)main_opcodes))
+	{
+		fprintf(stderr, "Error\n");
+		exit(3);
 	}
 
 	for (i = 0; i < num_bytes; i++)
