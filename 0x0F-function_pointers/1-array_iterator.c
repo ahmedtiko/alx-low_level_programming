@@ -6,8 +6,7 @@
  * @size: The size of the array.
  * @action: A pointer to the function to be applied to each element.
  *
- * Desc: This fn iterates over the elements of the integer array &
- * applies the provided function 'action' to each element.
+ * Return: Nothing
  */
 
 void array_iterator(int *array, size_t size, void (*action)(int))
