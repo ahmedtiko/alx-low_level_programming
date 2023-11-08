@@ -1,6 +1,5 @@
 #include "function_pointers.h"
-#include <stddef.h>
-#include <stdio.h>
+
 /**
  * array_iterator - Iterates over an array and applies a function to each element.
  * @array: Pointer to an integer array.
@@ -15,7 +14,7 @@ void array_iterator(int *array, size_t size, void (*action)(int))
 {
 	size_t i;
 
-	if (array == NULL || size == NULL || action == NULL)
+	if (array == NULL || size == 0 || action == NULL)
 	{
 		return;
 	}
