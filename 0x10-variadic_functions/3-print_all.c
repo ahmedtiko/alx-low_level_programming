@@ -60,6 +60,14 @@ void print_all(const char * const format, ...)
 	unsigned int i = 0, j = 0;
 	char *separator = "";
 
+	print_function_t print_functions[] = {
+		{'c', print_char},
+		{'i', print_int},
+		{'f', print_float},
+		{'s', print_string},
+		{0, NULL}
+	};
+
 	va_start(ap, format);
 
 	while (format && format[i])
