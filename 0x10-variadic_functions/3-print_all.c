@@ -1,93 +1,47 @@
 #include "variadic_functions.h"
 
-/**
- * print_char - Prints a char.
- * @ap: Argument list.
- */
-
-void print_char(va_list ap)
-{
-	printf("%c", va_arg(ap, int));
-}
-
-/**
- * print_int - Prints an int.
- * @ap: Argument list.
- */
-
-void print_int(va_list ap)
-{
-	printf("%d", va_arg(ap, int));
-}
-
-/**
- * print_float - Prints a float.
- * @ap: Argument list.
- */
-
-void print_float(va_list ap)
-{
-	printf("%f", va_arg(ap, double));
-}
-
-/**
- * print_string - Prints a string.
- * @ap: Argument list.
- */
-
-void print_string(va_list ap)
-{
-	char *str = va_arg(ap, char *);
-
-	if (str == NULL)
-	{
-		printf("(nil)");
-	}
-	else
-	{
-		printf("%s", str);
-	}
-}
-
-/**
- * print_all - Prints anything based on format.
- * @format: Format string.
- */
-
 void print_all(const char * const format, ...)
 {
-	va_list ap;
-	unsigned int i = 0, j = 0;
-	char *separator = "";
+	int i = 0;
+	char *str, *sep = "";
 
-	print_function_t print_functions[] = {
-		{'c', print_char},
-		{'i', print_int},
-		{'f', print_float},
-		{'s', print_string},
-		{'\0', NULL}
-	};
 
-	va_start(ap, format);
+	va_list list;
 
-	while (format && format[i])
-	{
-		const char *sep = separator;
+	va_start(list, format);
 
-		j = 0;
-
-		while (print_functions[j].specifier)
+		if (format)
 		{
-			if (format[i] == print_functions[j].specifier)
+			while (format[i])
 			{
-				printf("%s", sep);
-				print_functions[j].printer(ap);
-				separator = ", ";
+				switch (format[i])
+				{
+					case 'c':
+						printf("%s%c", sep, va_arg(list, int));
+						break;
+					case 'i':
+						printf("%s%d", sep, va_arg(list, int));
+						break;
+					case 'f':
+						printf("%s%f", sep, va_arg(list, double));
+						break;
+					case 's':
+						str = va_arg(list, char *);
+						if (!str)
+						{
+							str = "(nil)";
+						}
+						printf("%s%s", sep, str);
+						break;
+					default:
+						i++;
+						continue;
+				}
+				sep = ", ";
+				i++;
 			}
-			j++;
 		}
-		i++;
-	}
-	va_end(ap);
-	printf("\n");
+
+		printf("\n");
+		va_end(list);
 }
