@@ -60,26 +60,20 @@ void print_all(const char * const format, ...)
 	unsigned int i = 0, j = 0;
 	char *separator = "";
 
-	print_t print[] = {
-		{'c', print_char}
-		{'i', print_int}
-		{'f', print_float}
-		{'s', print_string}
-		{0, NULL}
-	};
-
 	va_start(ap, format);
 
 	while (format && format[i])
 	{
+		const char *sep = separator;
+
 		j = 0;
 
-		while (print[j].specifier)
+		while (print_functions[j].specifier)
 		{
-			if (format[i] == print[j].specifier)
+			if (format[i] == print_functions[j].specifier)
 			{
-				printf("%s", separator);
-				print[j].printer(ap);
+				printf("%s", sep);
+				print_functions[j].printer(ap);
 				separator = ", ";
 			}
 			j++;
