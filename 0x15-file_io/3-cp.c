@@ -12,7 +12,7 @@
 int main(int argc, char *argv[])
 {
 	int file_from, file_to;
-	int read_s, write_s;
+	int write_s;
 	char buffer[BUF_SIZE];
 	ssize_t bytesRead;
 
