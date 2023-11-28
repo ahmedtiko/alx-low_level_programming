@@ -16,9 +16,11 @@ void display_error(const char *message)
  */
 void display_elf_header(const Elf64_Ehdr *header)
 {
+	int i;
+
 	printf("ELF Header:\n");
 	printf("  Magic:   ");
-	for (int i = 0; i < EI_NIDENT; ++i)
+	for (i = 0; i < EI_NIDENT; ++i)
 	{
 		printf("%02x ", header->e_ident[i]);
 	}
@@ -40,13 +42,15 @@ void display_elf_header(const Elf64_Ehdr *header)
  */
 int main(int argc, char *argv[])
 {
+	int fd;
+
 	if (argc != 2)
 	{
 		fprintf(stderr, "Usage: %s elf_filename\n", argv[0]);
 		exit(98);
 	}
 
-	int fd = open(argv[1], O_RDONLY);
+	fd = open(argv[1], O_RDONLY);
 	if (fd == -1)
 	{
 		display_error("Error: Unable to open the file");
