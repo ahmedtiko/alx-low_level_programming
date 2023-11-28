@@ -44,6 +44,8 @@ int main(int argc, char *argv[])
 {
 	int fd;
 
+	Elf64_Ehdr elf_header;
+
 	if (argc != 2)
 	{
 		fprintf(stderr, "Usage: %s elf_filename\n", argv[0]);
@@ -56,7 +58,6 @@ int main(int argc, char *argv[])
 		display_error("Error: Unable to open the file");
 	}
 
-	Elf64_Ehdr elf_header;
 	if (read(fd, &elf_header, sizeof(Elf64_Ehdr)) != sizeof(Elf64_Ehdr))
 	{
 		display_error("Error: Unable to read ELF header");
