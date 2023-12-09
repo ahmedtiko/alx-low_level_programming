@@ -1,12 +1,12 @@
 #include "shell.h"
 
 /**
- * interactive - returns true if shell is interactive mode
+ * interact - returns true if shell is interactive mode
  * @info: struct address
  *
  * Return: 1 if interactive mode, 0 otherwise
  */
-int interactive(info_t *info)
+int interact(info_t *info)
 {
 	return (isatty(STDIN_FILENO) && info->readfd <= 2);
 }
@@ -40,35 +40,35 @@ int _isalpha(int c)
 }
 
 /**
- *_atoi - converts a string to an integer
- *@s: the string to be converted
- *Return: 0 if no numbers in string, converted number otherwise
+ *_atoi - converts a string to integer
+ *@s:  string that will be converted
+ *Return: 0 if no numbers detected, converted number otherwise
  */
 
 int _atoi(char *s)
 {
-	int i, sign = 1, flag = 0, output;
-	unsigned int result = 0;
+	int index, sign = 1, flag = 0, output;
+	unsigned int r = 0;
 
-	for (i = 0;  s[i] != '\0' && flag != 2; i++)
+	for (index = 0;  s[index] != '\0' && flag != 2; index++)
 	{
-		if (s[i] == '-')
+		if (s[index] == '-')
 			sign *= -1;
 
-		if (s[i] >= '0' && s[i] <= '9')
+		if (s[index] >= '0' && s[index] <= '9')
 		{
 			flag = 1;
-			result *= 10;
-			result += (s[i] - '0');
+			r *= 10;
+			r += (s[index] - '0');
 		}
 		else if (flag == 1)
 			flag = 2;
 	}
 
 	if (sign == -1)
-		output = -result;
+		output = -r;
 	else
-		output = result;
+		output = r;
 
 	return (output);
 }
