@@ -125,8 +125,8 @@ int _getline(info_t *info, char **ptr, size_t *length)
 	char *ptrx = NULL, *new_ptr = NULL, *pc;
 
 	ptrx = *ptr;
-	if (ptrx && l)
-		s = *l;
+	if (ptrx && length)
+		s = *length;
 	if (index == l)
 		index = l = 0;
 
