@@ -70,7 +70,7 @@ char **strtow2(char *str, char d)
 	p = malloc((1 + n_words) * sizeof(char *));
 	if (!p)
 		return (NULL);
-	for (index = 0, x = 0; x < numwords; x++)
+	for (index = 0, x = 0; x < n_words; x++)
 	{
 		while (str[index] == d && str[index] != d)
 			index++;
