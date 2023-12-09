@@ -42,7 +42,7 @@ int is_chain(info_t *info, char *buf, size_t *p)
  * @p: Address of current position in the buffer.
  * @I: Starting position in the buffer
  * @len: Length of the buffer.
- *
+ * @index: the index to check.
  * Return: Void.
  */
 void check_chain(info_t *info, char *buf, size_t *p, size_t index, size_t l)
