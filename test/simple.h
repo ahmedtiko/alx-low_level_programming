@@ -12,26 +12,26 @@
 #include <fcntl.h>
 #include <errno.h>
 
-/* for RD/WR buffers */
+/* RD/WR buffers */
 #define RD_BUFF_SIZE 1024
 #define WR_BUFF_SIZE 1024
 #define BUFF_FLUSH -1
 
-/* for command chaining */
+/* command chain */
 #define CMD_NORM	0
 #define CMD_OR		1
 #define CMD_AND		2
 #define CMD_CHAIN	3
 
-/* for convert_number() */
+/* convert_number() */
 #define CONVERT_LOWERCASE	1
 #define CONVERT_UNSIGNED	2
 
-/* 1 if using system getline() */
+/* if using getline() system -> 1 */
 #define USE_GETLINE 0
 #define USE_STRTOK 0
 
-#define HIST_FILE	".simple_shell_history"
+#define HIST_FILE	".simple_shell_hist"
 #define HIST_MAX	4096
 
 extern char **environ;
@@ -112,7 +112,7 @@ typedef struct builtin
 
 
 /* fn_shloop.c */
-int hsh(info_t *, char **);
+int hash(info_t *, char **);
 int find_builtin(info_t *);
 void find_cmd(info_t *);
 void fork_cmd(info_t *);
