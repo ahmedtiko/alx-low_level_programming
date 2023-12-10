@@ -1,4 +1,4 @@
-#include "shell.h"
+#include "simple.h"
 
 /**
  * input_buf - buffer chained commands.
