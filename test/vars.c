@@ -1,4 +1,4 @@
-#include "shell.h"
+#include "simple.h"
 
 /**
  * is_chain - Tests if the current char in the buffer is a chain delimiter.
