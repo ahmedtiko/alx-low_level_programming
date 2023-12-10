@@ -58,7 +58,7 @@ ssize_t get_input(info_t *info)
 
 	_putchar(BUF_FLUSH);
 	r = input_buf(info, &buff, &l);
-	if (r == -1) 
+	if (r == -1)
 		return (-1);
 	if (l)
 	{
