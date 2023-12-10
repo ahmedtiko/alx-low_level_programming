@@ -29,14 +29,14 @@ void _eputs(char *str)
 int _eputch(char c)
 {
 	static int index;
-	static char buf[WRITE_BUF_SIZE];
+	static char buf[WR_BUFF_SIZE];
 
-	if (c == BUF_FLUSH || index >= WRITE_BUF_SIZE)
+	if (c == BUFF_FLUSH || index >= WR_BUFF_SIZE)
 	{
 		write(2, buf, index);
 		index = 0;
 	}
-	if (c != BUF_FLUSH)
+	if (c != BUFF_FLUSH)
 		buf[index++] = c;
 	return (1);
 }
@@ -52,14 +52,14 @@ int _eputch(char c)
 int _putfds(char c, int fd)
 {
 	static int index;
-	static char buf[WRITE_BUF_SIZE];
+	static char buf[WR_BUFF_SIZE];
 
-	if (c == BUF_FLUSH || index >= WRITE_BUF_SIZE)
+	if (c == BUFF_FLUSH || index >= WR_BUFF_SIZE)
 	{
 		write(fd, buf, index);
 		index = 0;
 	}
-	if (c != BUF_FLUSH)
+	if (c != BUFF_FLUSH)
 		buf[index++] = c;
 	return (1);
 }
