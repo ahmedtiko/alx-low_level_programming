@@ -2,16 +2,16 @@
 
 /**
  * _myexit - exits the shell.
- * @info: Structure contain potential args. Used to maintain
- *         the  constant function prototype.
+ * @info: Struct that holds potential args.
+ *         Used to maintain the  const. fnc prototype.
  *  Return: exits with a given exit status.
- *         (0) if info.argv[0] != "exit"
+ *         (0) if != "exit"
  */
 int _myexit(info_t *info)
 {
 	int exitcheck;
 
-	if (info->argv[1])  /* If there is an exit arguement */
+	if (info->argv[1])
 	{
 		exitcheck = _erratoi(info->argv[1]);
 		if (exitcheck == -1)
