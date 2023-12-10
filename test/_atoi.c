@@ -3,18 +3,20 @@
 /**
  * interactive - returns true if shell is in the interactive mode.
  * @info: struct address.
- *
- * Return: 1 if interactive mode, 0 otherwise.
+ * Return: 1 if interactive mode, 0 if not.
  */
 int interactive(info_t *info)
 {
-	return (isatty(STDIN_FILENO) && info->readfd <= 2);
+	int isTTY = isatty(STDIN_FILENO);
+	int isReadFDValid = (info->readfd <= 2);
+	
+	return (isTTY && isReadFDValid);
 }
 
 /**
  * is_delim - checks if character is a delimeter
- * @c: the char to check
- * @delim: the delimeter string
+ * @c: character check
+ * @delim: string delimeter
  * Return: 1 if true, 0 if false
  */
 int is_delim(char c, char *delim)
@@ -27,8 +29,8 @@ int is_delim(char c, char *delim)
 
 /**
  *_isalpha - checks for alphabetic character
- *@c: The character to input
- *Return: 1 if c is alphabetic, 0 otherwise
+ *@c: input character
+ *Return: 1 if true, 0 if false
  */
 
 int _isalpha(int c)
@@ -66,9 +68,12 @@ int _atoi(char *s)
 	}
 
 	if (sign == -1)
+	{
 		output = -result;
+	}
 	else
+	{
 		output = result;
-
+	}
 	return (output);
 }
