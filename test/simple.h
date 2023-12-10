@@ -113,9 +113,9 @@ typedef struct builtin
 
 /* fn_shloop.c */
 int hash(info_t *, char **);
-int find_builtin(info_t *);
-void find_cmd(info_t *);
-void fork_cmd(info_t *);
+int find_built_in(info_t *);
+void find_command(info_t *);
+void fork_command(info_t *);
 
 /* fn_parser.c */
 int is_cmd(info_t *, char *);
