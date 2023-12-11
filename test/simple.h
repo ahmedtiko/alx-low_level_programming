@@ -138,8 +138,8 @@ char *starts_with(const char *, const char *);
 char *str_cat(char *, char *);
 
 /* fn_string1.c */
-char *_strcpy(char *, char *);
-char *_strdup(const char *);
+char *str_copy(char *, char *);
+char *str_dupp(const char *);
 void _puts(char *);
 int _putchar(char);
 
