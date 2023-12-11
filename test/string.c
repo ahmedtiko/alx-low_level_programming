@@ -6,7 +6,7 @@
  *
  * Return: integer length of string.
  */
-int _strlen(char *s)
+int str_len(char *s)
 {
 	int index = 0;
 
@@ -25,7 +25,7 @@ int _strlen(char *s)
  *
  * Return: -ve if s1 < s2, +ve if s1 > s2, 0 if s1 == s2
  */
-int _strcmp(char *s1, char *s2)
+int str_cmp(char *s1, char *s2)
 {
 	while (*s1 && *s2)
 	{
@@ -62,7 +62,7 @@ char *starts_with(const char *haystack, const char *needle)
  *
  * Return: Pointer to the destination buffer.
  */
-char *_strcat(char *dest, char *src)
+char *str_cat(char *dest, char *src)
 {
 	char *r = dest;
 
