@@ -24,14 +24,14 @@ int _iscmd(info_t *info, char *path)
 }
 
 /**
- * dup_chars - Duplicate chars.
+ * dup_char - Duplicate chars.
  * @pathstr: The Path string.
  * @start: starting index.
  * @stop: stopping index.
  *
  * Return: pointer to the new buffer.
  */
-char *dup_chars(char *pathstr, int start, int stop)
+char *dup_char(char *pathstr, int start, int stop)
 {
 	static char buff[1024];
 	int index = 0, y = 0;
@@ -67,7 +67,7 @@ char *find_path(info_t *info, char *pathstr, char *cmd)
 	{
 		if (!pathstr[index] || pathstr[index] == ':')
 		{
-			p = dup_chars(pathstr, curr_position, index);
+			p = dup_char(pathstr, curr_position, index);
 			if (!*p)
 				str_cat(p, cmd);
 			else
