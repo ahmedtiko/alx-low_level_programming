@@ -1,13 +1,13 @@
 #include "simple.h"
 
 /**
- * _strcpy - Copy a string.
+ * str_copy - Copy a string.
  * @dest: The destination.
  * @src: The source.
  *
  * Return: Pointer to the destination.
  */
-char *_strcpy(char *dest, char *src)
+char *str_copy(char *dest, char *src)
 {
 	int index = 0;
 
