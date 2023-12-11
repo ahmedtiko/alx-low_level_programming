@@ -1,13 +1,13 @@
 #include "simple.h"
 
 /**
- * is_cmd - Determine if the file is an executable command.
+ * _iscmd - Determine if the file is an executable command.
  * @info: The info struct.
  * @path: Path to the file.
  *
  * Return: 1 if true, 0 otherwise.
  */
-int is_cmd(info_t *info, char *path)
+int _iscmd(info_t *info, char *path)
 {
 	struct stat file_stat;
 
@@ -60,7 +60,7 @@ char *find_path(info_t *info, char *pathstr, char *cmd)
 		return (NULL);
 	if ((str_len(cmd) > 2) && starts_with(cmd, "./"))
 	{
-		if (is_cmd(info, cmd))
+		if (_iscmd(info, cmd))
 			return (cmd);
 	}
 	while (1)
@@ -75,7 +75,7 @@ char *find_path(info_t *info, char *pathstr, char *cmd)
 				str_cat(p, "/");
 				str_cat(p, cmd);
 			}
-			if (is_cmd(info, p))
+			if (_iscmd(info, p))
 				return (p);
 			if (!pathstr[index])
 				break;
