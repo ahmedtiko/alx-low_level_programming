@@ -18,7 +18,7 @@ char *get_history_file(info_t *info)
 	if (!buf)
 		return (NULL);
 	buf[0] = 0;
-	_strcpy(buf, dir);
+	str_copy(buf, dir);
 	str_cat(buf, "/");
 	str_cat(buf, HIST_FILE);
 	return (buf);
