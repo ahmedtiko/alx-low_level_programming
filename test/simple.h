@@ -119,7 +119,7 @@ void fork_command(info_t *);
 
 /* fn_parser.c */
 int _iscmd(info_t *, char *);
-char *dup_chars(char *, int, int);
+char *dup_char(char *, int, int);
 char *find_path(info_t *, char *, char *);
 
 /* fn_loop_hsh.c */
