@@ -72,8 +72,8 @@ char *find_path(info_t *info, char *pathstr, char *cmd)
 				str_cat(p, cmd);
 			else
 			{
-				_strcat(p, "/");
-				_strcat(p, cmd);
+				str_cat(p, "/");
+				str_cat(p, cmd);
 			}
 			if (is_cmd(info, p))
 				return (p);
