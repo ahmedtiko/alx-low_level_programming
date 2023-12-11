@@ -28,7 +28,7 @@ char *str_copy(char *dest, char *src)
  *
  * Return: The pointer to the duplicated string.
  */
-char *_strdup(const char *str)
+char *str_dupp (const char *str)
 {
 	int l = 0;
 	char *r;
