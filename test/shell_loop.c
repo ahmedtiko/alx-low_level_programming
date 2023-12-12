@@ -15,7 +15,7 @@ int hash(info_t *info, char **av)
 	while (r != -1 && builtin_ret != -2)
 	{
 		clear_info(info);
-		if (interactive(info))
+		if (is_interactive(info))
 			_puts("$ ");
 		_eputch(BUFF_FLUSH);
 		r = get_input(info);
@@ -26,13 +26,13 @@ int hash(info_t *info, char **av)
 			if (builtin_ret == -1)
 				find_command(info);
 		}
-		else if (interactive(info))
+		else if (is_interactive(info))
 			_putchar('\n');
 		free_info(info, 0);
 	}
 	write_history(info);
 	free_info(info, 1);
-	if (!interactive(info) && info->status)
+	if (!is_interactive(info) && info->status)
 		exit(info->status);
 	if (builtin_ret == -2)
 	{
@@ -94,7 +94,7 @@ void find_command(info_t *info)
 		info->linecount_flag = 0;
 	}
 	for (index = 0, y = 0; info->arg[index]; index++)
-		if (!is_delim(info->arg[index], " \t\n"))
+		if (!is_delimeter(info->arg[index], " \t\n"))
 			y++;
 	if (!y)
 		return;
@@ -107,7 +107,7 @@ void find_command(info_t *info)
 	}
 	else
 	{
-		if ((interactive(info) || _getenv(info, "PATH=")
+		if ((is_interactive(info) || _getenv(info, "PATH=")
 			|| info->argv[0][0] == '/') && _iscmd(info, info->argv[0]))
 			fork_command(info);
 		else if (*(info->arg) != '\n')
