@@ -53,7 +53,7 @@ int set_z_alias(info_t *info, char *str)
 		return (1);
 	if (!*++p)
 	{
-		r = unset_z_alias(info, str)
+		r = unset_z_alias(info, str);
 		return (r);
 	}
 
