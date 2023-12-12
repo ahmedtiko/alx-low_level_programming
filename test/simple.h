@@ -150,7 +150,6 @@ char *strn_char(char *, char);
 
 /* fn_tokenizer.c */
 char **str_tow(char *, char *);
-char **str_tow2(char *, char);
 
 /* fn_realloc.c */
 char *_memset(char *, char, unsigned int);
@@ -167,11 +166,11 @@ int is_alpha(int);
 int _atoi(char *);
 
 /* fn_errors1.c */
-int _erratoi(char *);
-void print_error(info_t *, char *);
-int print_d(int, int);
-char *convert_number(long int, int, int);
-void remove_comments(char *);
+int error_atoi(char *);
+void error_print(info_t *, char *);
+int decimal_print(int, int);
+char *cnv_n(long int, int, int);
+void rm_comm(char *);
 
 /* fn_builtin.c */
 int is_exit(info_t *);
