@@ -1,13 +1,13 @@
 #include "simple.h"
 
 /**
- * _myexit - exits the shell.
+ * _exit - exits the shell.
  * @info: Struct that holds potential args.
  *         Used to maintain the  const. fnc prototype.
  *  Return: exits with a given exit status.
  *         (0) if != "exit"
  */
-int _myexit(info_t *info)
+int _exit(info_t *info)
 {
 	int exitcheck;
 
@@ -30,12 +30,12 @@ int _myexit(info_t *info)
 }
 
 /**
- * _mycd - changes current directory of the process.
+ * _command - changes current directory of the process.
  * @info: Structure containing potential args. Used to maintain
  *          constant function prototype.
  *  Return: Always 0
  */
-int _mycd(info_t *info)
+int _command(info_t *info)
 {
 	char *s, *dir, buffer[1024];
 	int chdir_ret;
@@ -80,12 +80,12 @@ int _mycd(info_t *info)
 }
 
 /**
- * _myhelp - changes current directory of the process.
+ * _help - changes current directory of the process.
  * @info: Structure containing potential args. Used to maintain
  *          constant function prototype.
  *  Return: Always 0
  */
-int _myhelp(info_t *info)
+int _help(info_t *info)
 {
 	char **arg_array;
 
