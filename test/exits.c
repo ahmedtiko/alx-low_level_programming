@@ -7,7 +7,7 @@
  *@n: the number of characters to be copied.
  *Return: the concatenated string.
  */
-char *_strncpy(char *dest, char *src, int n)
+char *strn_copy(char *dest, char *src, int n)
 {
 	int i, j;
 	char *s = dest;
@@ -31,13 +31,13 @@ char *_strncpy(char *dest, char *src, int n)
 }
 
 /**
- **_strncat - concatenates two strings.
+ **strn_cat - concatenates two strings.
  *@dest: first string.
  *@src: second string.
  *@n: the number of bytes to be maximally used.
  *Return: the concatenated string.
  */
-char *_strncat(char *dest, char *src, int n)
+char *strn_cat(char *dest, char *src, int n)
 {
 	int i, j;
 	char *s = dest;
@@ -58,12 +58,12 @@ char *_strncat(char *dest, char *src, int n)
 }
 
 /**
- **_strchr - locate the characters in a string
+ **strnchar - locate the characters in a string
  *@s: string to be parsed.
  *@c: character to be looking for.
  *Return: (s) a pointer to the memory area s.
  */
-char *_strchr(char *s, char c)
+char *strn_char(char *s, char c)
 {
 	do {
 		if (*s == c)
