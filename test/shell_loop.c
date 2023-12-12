@@ -48,7 +48,7 @@ int hash(info_t *info, char **av)
  * @info: the parameter & return info struct
  *
  * Return: -1 if built_in not found,
- * 	0 successfull,
+ *	0 successfull,
  *	1 if not successful,
  *	-2 if signals exit()
  */
