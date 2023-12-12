@@ -184,7 +184,7 @@ int z_alias(info_t *);
 /*fn_getline.c */
 ssize_t gett_input(info_t *);
 int gett_line(info_t *, char **, size_t *);
-void sigin_tHandler(int);
+void signin_Handler(int);
 
 /* fn_getinfo.c */
 void clear_info(info_t *);
