@@ -47,7 +47,7 @@ int set_alias(info_t *info, char *str)
 {
 	char *p;
 
-	p = strnchar(str, '=');
+	p = strn_char(str, '=');
 	if (!p)
 		return (1);
 	if (!*++p)
