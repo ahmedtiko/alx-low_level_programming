@@ -1,13 +1,13 @@
 #include "simple.h"
 
 /**
- * _exit - exits the shell.
+ * is_exit - exits the shell.
  * @info: Struct that holds potential args.
  *         Used to maintain the  const. fnc prototype.
  *  Return: exits with a given exit status.
  *         (0) if != "exit"
  */
-int _exit(info_t *info)
+int is_exit(info_t *info)
 {
 	int exitcheck;
 
