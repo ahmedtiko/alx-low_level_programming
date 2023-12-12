@@ -9,7 +9,7 @@ int interactive(info_t *info)
 {
 	int isTTY = isatty(STDIN_FILENO);
 	int isReadFDValid = (info->readfd <= 2);
-	
+
 	return (isTTY && isReadFDValid);
 }
 
