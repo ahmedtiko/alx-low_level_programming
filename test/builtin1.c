@@ -46,14 +46,18 @@ int unset_z_alias(info_t *info, char *str)
 int set_z_alias(info_t *info, char *str)
 {
 	char *p;
+	int r;
 
 	p = strn_char(str, '=');
 	if (!p)
 		return (1);
 	if (!*++p)
-		return (unset_alias(info, str));
+	{
+		r = unset_z_alias(info, str)
+		return (r);
+	}
 
-	unset_alias(info, str);
+	unset_z_alias(info, str);
 	return (add_node_end(&(info->alias), str, 0) == NULL);
 }
 
