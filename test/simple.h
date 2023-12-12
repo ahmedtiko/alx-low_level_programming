@@ -179,8 +179,8 @@ int _command(info_t *);
 int _help(info_t *);
 
 /* fn_builtin1.c */
-int _myhistory(info_t *);
-int _myalias(info_t *);
+int z_history(info_t *);
+int z_alias(info_t *);
 
 /*fn_getline.c */
 ssize_t get_input(info_t *);
