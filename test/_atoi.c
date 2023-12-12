@@ -1,11 +1,11 @@
 #include "simple.h"
 
 /**
- * interactive - returns true if shell is in the interactive mode.
+ * is_interactive - returns true if shell is in the interactive mode.
  * @info: struct address.
  * Return: 1 if interactive mode, 0 if not.
  */
-int interactive(info_t *info)
+int is_interactive(info_t *info)
 {
 	int isTTY = isatty(STDIN_FILENO);
 	int isReadFDValid = (info->readfd <= 2);
@@ -14,12 +14,12 @@ int interactive(info_t *info)
 }
 
 /**
- * is_delim - checks if character is a delimeter
+ * is_delimeter - checks if character is a delimeter
  * @c: character check
  * @delim: string delimeter
  * Return: 1 if true, 0 if false
  */
-int is_delim(char c, char *delim)
+int is_delimeter(char c, char *delim)
 {
 	while (*delim)
 		if (*delim++ == c)
@@ -28,12 +28,12 @@ int is_delim(char c, char *delim)
 }
 
 /**
- *_isalpha - checks for alphabetic character
+ *is_alpha - checks for alphabetic character
  *@c: input character
  *Return: 1 if true, 0 if false
  */
 
-int _isalpha(int c)
+int is_alpha(int c)
 {
 	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
 		return (1);

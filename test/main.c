@@ -37,7 +37,7 @@ int main(int ac, char **av)
 		}
 		info->readfd = fds;
 	}
-	populate_env_list(info);
+	inhabit_env_list(info);
 	read_history(info);
 	hash(info, av);
 	return (EXIT_SUCCESS);

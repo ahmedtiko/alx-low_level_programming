@@ -111,7 +111,7 @@ typedef struct builtin
 } builtin_table;
 
 
-/* fn_shloop.c */
+/* fn_shell_loop.c */
 int hash(info_t *, char **);
 int find_built_in(info_t *);
 void find_command(info_t *);
@@ -149,8 +149,7 @@ char *strn_cat(char *, char *, int);
 char *strn_char(char *, char);
 
 /* fn_tokenizer.c */
-char **strtow(char *, char *);
-char **strtow2(char *, char);
+char **str_tow(char *, char *);
 
 /* fn_realloc.c */
 char *_memset(char *, char, unsigned int);
@@ -161,26 +160,26 @@ void *_realloc(void *, unsigned int, unsigned int);
 int bfree(void **);
 
 /* fn_atoi.c */
-int interactive(info_t *);
-int is_delim(char, char *);
-int _isalpha(int);
+int is_interactive(info_t *);
+int is_delimeter(char, char *);
+int is_alpha(int);
 int _atoi(char *);
 
 /* fn_errors1.c */
-int _erratoi(char *);
-void print_error(info_t *, char *);
-int print_d(int, int);
-char *convert_number(long int, int, int);
-void remove_comments(char *);
+int error_atoi(char *);
+void error_print(info_t *, char *);
+int decimal_print(int, int);
+char *cnv_n(long int, int, int);
+void rm_comm(char *);
 
 /* fn_builtin.c */
-int _myexit(info_t *);
-int _mycd(info_t *);
-int _myhelp(info_t *);
+int is_exit(info_t *);
+int _command(info_t *);
+int _help(info_t *);
 
 /* fn_builtin1.c */
-int _myhistory(info_t *);
-int _myalias(info_t *);
+int z_history(info_t *);
+int z_alias(info_t *);
 
 /*fn_getline.c */
 ssize_t get_input(info_t *);
@@ -193,11 +192,11 @@ void set_info(info_t *, char **);
 void free_info(info_t *, int);
 
 /* fn_environ.c */
-char *_getenv(info_t *, const char *);
-int _myenv(info_t *);
-int _mysetenv(info_t *);
-int _myunsetenv(info_t *);
-int populate_env_list(info_t *);
+char *get_env(info_t *, const char *);
+int z_env(info_t *);
+int set_env(info_t *);
+int unset_env(info_t *);
+int inhabit_env_list(info_t *);
 
 /* fn_getenv.c */
 char **get_environ(info_t *);
