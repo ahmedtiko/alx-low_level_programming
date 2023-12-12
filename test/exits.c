@@ -1,7 +1,7 @@
 #include "simple.h"
 
 /**
- **_strncpy - copies a string.
+ **strn_copy - copies a string.
  *@dest: the destination of the string to be copied to.
  *@src: the source string.
  *@n: the number of characters to be copied.
@@ -58,7 +58,7 @@ char *strn_cat(char *dest, char *src, int n)
 }
 
 /**
- **strnchar - locate the characters in a string
+ **strn_char - locate the characters in a string
  *@s: string to be parsed.
  *@c: character to be looking for.
  *Return: (s) a pointer to the memory area s.
