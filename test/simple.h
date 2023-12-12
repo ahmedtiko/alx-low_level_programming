@@ -144,9 +144,9 @@ void _puts(char *);
 int _putchar(char);
 
 /* fn_exits.c */
-char *_strncpy(char *, char *, int);
-char *_strncat(char *, char *, int);
-char *_strchr(char *, char);
+char *strn_copy(char *, char *, int);
+char *strn_cat(char *, char *, int);
+char *strn_char(char *, char);
 
 /* fn_tokenizer.c */
 char **strtow(char *, char *);
