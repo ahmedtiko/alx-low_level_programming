@@ -161,9 +161,9 @@ void *_realloc(void *, unsigned int, unsigned int);
 int bfree(void **);
 
 /* fn_atoi.c */
-int interactive(info_t *);
-int is_delim(char, char *);
-int _isalpha(int);
+int is_interactive(info_t *);
+int is_delimeter(char, char *);
+int is_alpha(int);
 int _atoi(char *);
 
 /* fn_errors1.c */
