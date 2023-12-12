@@ -149,8 +149,8 @@ char *strn_cat(char *, char *, int);
 char *strn_char(char *, char);
 
 /* fn_tokenizer.c */
-char **strtow(char *, char *);
-char **strtow2(char *, char);
+char **str_tow(char *, char *);
+char **str_tow2(char *, char);
 
 /* fn_realloc.c */
 char *_memset(char *, char, unsigned int);
