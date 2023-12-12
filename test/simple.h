@@ -111,7 +111,7 @@ typedef struct builtin
 } builtin_table;
 
 
-/* fn_shloop.c */
+/* fn_shell_loop.c */
 int hash(info_t *, char **);
 int find_built_in(info_t *);
 void find_command(info_t *);
@@ -174,9 +174,9 @@ char *convert_number(long int, int, int);
 void remove_comments(char *);
 
 /* fn_builtin.c */
-int _myexit(info_t *);
-int _mycd(info_t *);
-int _myhelp(info_t *);
+int _exit(info_t *);
+int _command(info_t *);
+int _help(info_t *);
 
 /* fn_builtin1.c */
 int _myhistory(info_t *);
