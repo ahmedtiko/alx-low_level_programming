@@ -134,16 +134,16 @@ int _getline(info_t *info, char **ptr, size_t *length)
 	if (r == -1 || (r == 0 && l == 0))
 		return (-1);
 
-	pc = _strchr(buff + index, '\n');
+	pc = strn_char(buff + index, '\n');
 	y = pc ? 1 + (unsigned int)(pc - buff) : l;
 	new_ptr = _realloc(ptrx, s, s ? s + y : y + 1);
 	if (!new_ptr)
 		return (ptrx ? free(ptrx), -1 : -1);
 
 	if (s)
-		_strncat(new_ptr, buff + index, y - index);
+		strn_cat(new_ptr, buff + index, y - index);
 	else
-		_strncpy(new_ptr, buff + index, y - index + 1);
+		strn_copy(new_ptr, buff + index, y - index + 1);
 
 	s += y - index;
 	index = y;
