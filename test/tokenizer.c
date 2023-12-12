@@ -1,13 +1,13 @@
 #include "simple.h"
 
 /**
- * **strtow - Splits a string into words. Repeat delimiters are IGNORED
+ * **str_tow - Splits a string into words. Repeat delimiters are IGNORED
  * @str: The input string.
  * @d: The delimiter string.
  * Return: A pointer to an array of strings, or NULL on fail.
  */
 
-char **strtow(char *str, char *d)
+char **str_tow(char *str, char *d)
 {
 	int index, x, y, z, n_words = 0;
 	char **p;
@@ -50,12 +50,12 @@ char **strtow(char *str, char *d)
 }
 
 /**
- * **strtow2 - Splits a string into words.
+ * **str_tow2 - Splits a string into words.
  * @str: The input string.
  * @d: The delimiter.
  * Return: a pointer to an array of strings, or NULL on fail.
  */
-char **strtow2(char *str, char d)
+char **str_tow2(char *str, char d)
 {
 	int index, x, y, z, n_words = 0;
 	char **p;
