@@ -193,11 +193,11 @@ void set_info(info_t *, char **);
 void free_info(info_t *, int);
 
 /* fn_environ.c */
-char *_getenv(info_t *, const char *);
-int _myenv(info_t *);
-int _mysetenv(info_t *);
-int _myunsetenv(info_t *);
-int populate_env_list(info_t *);
+char *get_env(info_t *, const char *);
+int z_env(info_t *);
+int set_env(info_t *);
+int unset_env(info_t *);
+int inhabit_env_list(info_t *);
 
 /* fn_getenv.c */
 char **get_environ(info_t *);
