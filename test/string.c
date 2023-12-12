@@ -1,7 +1,7 @@
 #include "simple.h"
 
 /**
- * _strlen - Return the length of the string.
+ * str_len - Return the length of the string.
  * @s: the string whose length to check.
  *
  * Return: integer length of string.
@@ -19,7 +19,7 @@ int str_len(char *s)
 }
 
 /**
- * _strcmp - performs the comparison of two strings.
+ * str_cmp - performs the comparison of two strings.
  * @s1: first string.
  * @s2: second string.
  *
@@ -56,7 +56,7 @@ char *starts_with(const char *haystack, const char *needle)
 }
 
 /**
- * _strcat - Concatenate two strings.
+ * str_cat - Concatenate two strings.
  * @dest: Destination buffer.
  * @src: the buffer source.
  *
