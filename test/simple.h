@@ -27,9 +27,6 @@
 #define CONVERT_LC	1
 #define CONVERT_UNSIGN	2
 
-/* if using getline() system -> 1 */
-#define USE_GET_LINE 0
-#define USE_STR_TOK 0
 
 #define HIST_FILE	".simple_shell_hist"
 #define HIST_MAX	4096
