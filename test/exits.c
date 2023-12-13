@@ -1,11 +1,14 @@
 #include "simple.h"
 
 /**
- **strn_copy - copies a string.
- *@dest: the destination of the string to be copied to.
- *@src: the source string.
- *@n: the number of characters to be copied.
- *Return: the concatenated string.
+ * strn_copy - Copies up to n characters from the source string
+ *	to the destination string.
+ * @dest: The destination string.
+ * @src: The source string.
+ * @n: The maximum number of characters to copy.
+ *
+ * Return:
+ *	A pointer to the destination string.
  */
 char *strn_copy(char *dest, char *src, int n)
 {
@@ -32,36 +35,41 @@ char *strn_copy(char *dest, char *src, int n)
 
 /**
  **strn_cat - concatenates two strings.
- *@dest: first string.
- *@src: second string.
- *@n: the number of bytes to be maximally used.
- *Return: the concatenated string.
+ * @dest: The destination string.
+ * @src: The source string.
+ * @n: The maximum number of characters to concatenate.
+ *
+ * Return:
+ *	A pointer to the destination string.
  */
 char *strn_cat(char *dest, char *src, int n)
 {
-	int i, j;
+	int index, x;
 	char *s = dest;
 
-	i = 0;
-	j = 0;
-	while (dest[i] != '\0')
-		i++;
-	while (src[j] != '\0' && j < n)
+	index = 0;
+	x = 0;
+	while (dest[index] != '\0')
+		index++;
+	while (src[x] != '\0' && x < n)
 	{
-		dest[i] = src[j];
-		i++;
-		j++;
+		dest[index] = src[x];
+		index++;
+		x++;
 	}
-	if (j < n)
-		dest[i] = '\0';
+	if (x < n)
+		dest[index] = '\0';
 	return (s);
 }
 
 /**
- **strn_char - locate the characters in a string
- *@s: string to be parsed.
- *@c: character to be looking for.
- *Return: (s) a pointer to the memory area s.
+ * strn_char - Finds the first sign of a char in a string up to a null terminator.
+ * @s: The string to be searched.
+ * @c: The character to search for.
+ *
+ * Return:
+ *	A pointer to the first occurrence of the character in the string,
+ *	or NULL if the character is not found.
  */
 char *strn_char(char *s, char c)
 {

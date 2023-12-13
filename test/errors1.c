@@ -1,10 +1,12 @@
 #include "simple.h"
 
 /**
- * error_atoi - convert string to integer.
- * @s: string to be converted.
- * Return: 0 if no numbers in string, converted number otherwise
- *       -1 on error.
+ * error_atoi - Converts a string to an integer with error handling.
+ * @s: The string to be converted.
+ *
+ * Return:
+ *	The converted integer on success,
+ *	-1 if an error occurs (e.g., non-numeric characters or overflow).
  */
 int error_atoi(char *s)
 {
@@ -29,11 +31,11 @@ int error_atoi(char *s)
 }
 
 /**
- * error_print - prints an error message.
- * @info: the parameter & return info struct.
- * @estr: string containing specified error type
- * Return: 0 if no numbers in string, converted number otherwise
- *        -1 on error.
+ * error_print - Prints an error message to the standard error output.
+ * @info: Pointer to the info_t structure containing shell information.
+ * @estr: The error message to be printed.
+ *
+ * Return: void
  */
 void error_print(info_t *info, char *estr)
 {
@@ -47,11 +49,12 @@ void error_print(info_t *info, char *estr)
 }
 
 /**
- * decimal_print - function prints decimal (integer) number (base 10).
- * @input: the input.
- * @fd: the filedescriptor to write to.
+ * decimal_print - Prints an integer in decimal format (BASE 10).
+ * @input: The integer to be printed.
+ * @fd: The file descriptor to write to (STDOUT_FILENO or STDERR_FILENO).
  *
- * Return: number of characters printed.
+ * Return:
+ *	The number of characters printed.
  */
 int decimal_print(int input, int fd)
 {
@@ -86,12 +89,14 @@ int decimal_print(int input, int fd)
 }
 
 /**
- * cnv_n - converter function, a clone of itoa
- * @num: number.
- * @base: base.
- * @flags: args flags.
+ * cnv_n - Converts a long int to a string represent. in a specified base.
+ * @num: The long integer to be converted.
+ * @base: The base for the conversion (e.g., 10 for decimal, 16 for hexadecimal).
+ * @flags: Conversion flags, including CONVERT_UNSIGN and CONVERT_LC.
  *
- * Return: string.
+ * Return:
+ *	A pointer to the converted string.
+ *	The result is stored in a static buffer, so it is not thread-safe.
  */
 char *cnv_n(long int num, int base, int flags)
 {
@@ -121,10 +126,10 @@ char *cnv_n(long int num, int base, int flags)
 }
 
 /**
- * rm_comm - function replaces first instance of '#' to '\0'.
- * @buf: address of the string to modify.
+ * rm_comm - Removes comments from a string by replacing '#' and everything after it with '/0'.
+ * @buf: The string to be processed.
  *
- * Return: Always 0.
+ * Return: void
  */
 void rm_comm(char *buf)
 {
