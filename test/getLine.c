@@ -118,7 +118,7 @@ ssize_t read_buf(info_t *info, char *buf, size_t *i)
 }
 
 /**
- * gett_line - RDs line of input from a file descr. & dynamically alloc. mem. for it.
+ * gett_line - RDs input line from a file descr. & dynamic. alloc. memory.
  * @info: Pointer to the info_t structure containing shell information.
  * @ptr: Pointer to the buffer to store the read line.
  * @length: Pointer to the length of the buffer.
