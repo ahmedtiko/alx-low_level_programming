@@ -187,9 +187,9 @@ int gett_line(info_t *, char **, size_t *);
 void signin_Handler(int);
 
 /* fn_getinfo.c */
-void clear_info(info_t *);
-void set_info(info_t *, char **);
-void free_info(info_t *, int);
+void clear_inf(info_t *);
+void set_inf(info_t *, char **);
+void free_inf(info_t *, int);
 
 /* fn_environ.c */
 char *get_env(info_t *, const char *);
