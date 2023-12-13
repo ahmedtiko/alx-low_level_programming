@@ -27,6 +27,7 @@
 #define CONVERT_LC	1
 #define CONVERT_UNSIGN	2
 
+#define HIST_FILE	".SimpleShell_Hist"
 #define HIST_MAX	4096
 
 extern char **environ;
