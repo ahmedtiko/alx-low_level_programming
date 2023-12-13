@@ -1,10 +1,15 @@
 #include "simple.h"
 
 /**
- * gett_environ - Return the string array copied from our environment.
- * @info: Structure containing potential arguments. Used to maintain
- *          constant function prototype.
- * Return: Always 0.
+ * gett_environ - Return the string array copied from environment.
+ * @info: Pointer to the info_t structure containing shell information.
+ *
+ * Description:
+ *	If the environment variables have changed or are not initialized,
+ *	it converts the linked list of environment variables to an array of strings.
+ *
+ * Return:
+ *	A pointer to the array of environment variables.
  */
 char **gett_environ(info_t *info)
 {
@@ -18,11 +23,16 @@ char **gett_environ(info_t *info)
 }
 
 /**
- * un_setenv - Remove the environment variable.
- * @info: Structure containing potential arguments. Used to maintain
- *        constant function prototype.
- *  Return: 1 on delete, 0 otherwise
- * @var: the string env var property.
+ * un_setenv - Removes an environ. var. from the shell's environment.
+ * @info: Pointer to the info_t structure containing shell information.
+ * @var: The name of the environment variable to be removed.
+ *
+ * Description:
+ *	Searches for the specified environ. var. and removes it from the list.
+ *
+ * Return:
+ *	1 if the environment variable is successfully removed,
+ *	0 if the variable is not found or if there are errors.
  */
 int un_setenv(info_t *info, char *var)
 {
@@ -50,14 +60,19 @@ int un_setenv(info_t *info, char *var)
 }
 
 /**
- * sett_env - initialize a new environment variable,
- *             or modify the existing one.
- * @info: structure containing potential arguments. Used to maintain
- *        constant function prototype.
- * @var: String env var property.
- * @value: String env var value.
- *  Return: Always 0.
- */
+ * sett_env - initialize a new environ. var,
+ *	or modify the existing
+ * @info: Pointer to the info_t structure containing shell information.
+ * @var: The name of the environment variable.
+ * @value: The value to assign to the environment variable.
+ *
+ * Description:
+ *	Creates or updates the specified environment variable with the given value.
+ *	If the variable already exists, its value is updated; otherwise, a new
+ *	environment variable is created.
+ *
+ * Return:
+ *	0 on success, 1 on memory allocation failure.
 int sett_env(info_t *info, char *var, char *value)
 {
 	char *buf = NULL;
