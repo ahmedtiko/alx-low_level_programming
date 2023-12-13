@@ -44,12 +44,12 @@ ssize_t input_buf(info_t *info, char **buf, size_t *len)
 }
 
 /**
- * get_input - get a line minus the new line.
+ * gett_input - get a line minus the new line.
  * @info: parameter struct.
  *
  * Return: bytes read.
  */
-ssize_t get_input(info_t *info)
+ssize_t gett_input(info_t *info)
 {
 	static char *buff;
 	static size_t index, x, l;
@@ -116,7 +116,7 @@ ssize_t read_buf(info_t *info, char *buf, size_t *i)
  *
  * Return: s.
  */
-int _getline(info_t *info, char **ptr, size_t *length)
+int gett_line(info_t *info, char **ptr, size_t *length)
 {
 	static char buff[RD_BUFF_SIZE];
 	static size_t index, l;
@@ -161,7 +161,7 @@ int _getline(info_t *info, char **ptr, size_t *length)
  *
  * Return: void.
  */
-void sigintHandler(__attribute__((unused))int sig_num)
+void signin_Handler(__attribute__((unused))int sig_num)
 {
 	_puts("\n");
 	_puts("$ ");
