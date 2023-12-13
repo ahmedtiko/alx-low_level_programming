@@ -15,7 +15,7 @@ int is_interactive(info_t *info)
 }
 
 /**
- * is_delimiter - Checks if a character is a delimiter.
+ * is_delimeter - Checks if a character is a delimiter.
  * @c: The character to be checked.
  * @delim: A string containing the delimiters to check against.
  *

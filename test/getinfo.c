@@ -18,7 +18,7 @@ void clear_inf(info_t *info)
 }
 
 /**
- * set_inf - Initializes the fields of the info_t structure with command-line args.
+ * set_inf - Initializes fields of the info_t structure with command-line args.
  * @info: Pointer to the info_t structure to be initialized.
  * @av: The command-line arguments array from main().
  *
