@@ -23,7 +23,7 @@ char *str_copy(char *dest, char *src)
 }
 
 /**
- * _strdup - Duplicate a string.
+ * str_dupp - Duplicate a string.
  * @str: the string to be duplicated.
  *
  * Return: The pointer to the duplicated string.

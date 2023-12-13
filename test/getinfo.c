@@ -1,10 +1,10 @@
 #include "simple.h"
 
 /**
- * clear_info - Initialize info_t struct.
+ * clear_inf - Initialize info_t struct.
  * @info: Struct addres.
  */
-void clear_info(info_t *info)
+void clear_inf(info_t *info)
 {
 	info->arg = NULL;
 	info->argv = NULL;
@@ -13,11 +13,11 @@ void clear_info(info_t *info)
 }
 
 /**
- * set_info - Initializes info_t struct
+ * set_inf - Initializes info_t struct
  * @info: Struct address
  * @av: Args vector.
  */
-void set_info(info_t *info, char **av)
+void set_inf(info_t *info, char **av)
 {
 	int i = 0;
 
@@ -45,11 +45,11 @@ void set_info(info_t *info, char **av)
 }
 
 /**
- * free_info - Free info_t struct fields.
+ * free_inf - Free info_t struct fields.
  * @info: Struct address.
  * @all: True if freeing all fields.
  */
-void free_info(info_t *info, int all)
+void free_inf(info_t *info, int all)
 {
 	ffree(info->argv);
 	info->argv = NULL;

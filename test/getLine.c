@@ -17,11 +17,11 @@ ssize_t input_buf(info_t *info, char **buf, size_t *len)
 	{
 		free(*buf);
 		*buf = NULL;
-		signal(SIGINT, sigintHandler);
+		signal(SIGINT, signin_Handler);
 #if USE_GETLINE
 		r = getline(buf, &len_p, stdin);
 #else
-		r = _getline(info, buf, &len_p);
+		r = gett_line(info, buf, &len_p);
 #endif
 		if (r > 0)
 		{
@@ -44,12 +44,12 @@ ssize_t input_buf(info_t *info, char **buf, size_t *len)
 }
 
 /**
- * get_input - get a line minus the new line.
+ * gett_input - get a line minus the new line.
  * @info: parameter struct.
  *
  * Return: bytes read.
  */
-ssize_t get_input(info_t *info)
+ssize_t gett_input(info_t *info)
 {
 	static char *buff;
 	static size_t index, x, l;
@@ -109,14 +109,14 @@ ssize_t read_buf(info_t *info, char *buf, size_t *i)
 }
 
 /**
- * _getline - Get the next line of input from STDIN.
+ * gett_line - Get the next line of input from STDIN.
  * @info: Parameter struct.
  * @ptr: Address of a pointer to buffer, preallocated or NULL.
  * @length: Size of preallocated ptr buffer if not NULL.
  *
  * Return: s.
  */
-int _getline(info_t *info, char **ptr, size_t *length)
+int gett_line(info_t *info, char **ptr, size_t *length)
 {
 	static char buff[RD_BUFF_SIZE];
 	static size_t index, l;
@@ -156,12 +156,12 @@ int _getline(info_t *info, char **ptr, size_t *length)
 }
 
 /**
- * sigintHandler - blocks the ctrl-C(COPY).
+ * signin_Handler- blocks the ctrl-C(COPY).
  * @sig_num: the signal number.
  *
  * Return: void.
  */
-void sigintHandler(__attribute__((unused))int sig_num)
+void signin_Handler(__attribute__((unused))int sig_num)
 {
 	_puts("\n");
 	_puts("$ ");

@@ -182,14 +182,14 @@ int z_history(info_t *);
 int z_alias(info_t *);
 
 /*fn_getline.c */
-ssize_t get_input(info_t *);
-int _getline(info_t *, char **, size_t *);
-void sigintHandler(int);
+ssize_t gett_input(info_t *);
+int gett_line(info_t *, char **, size_t *);
+void signin_Handler(int);
 
 /* fn_getinfo.c */
-void clear_info(info_t *);
-void set_info(info_t *, char **);
-void free_info(info_t *, int);
+void clear_inf(info_t *);
+void set_inf(info_t *, char **);
+void free_inf(info_t *, int);
 
 /* fn_environ.c */
 char *get_env(info_t *, const char *);
@@ -199,9 +199,9 @@ int unset_env(info_t *);
 int inhabit_env_list(info_t *);
 
 /* fn_getenv.c */
-char **get_environ(info_t *);
-int _unsetenv(info_t *, char *);
-int _setenv(info_t *, char *, char *);
+char **gett_environ(info_t *);
+int un_setenv(info_t *, char *);
+int sett_env(info_t *, char *, char *);
 
 /* fn_history.c */
 char *get_history_file(info_t *info);
