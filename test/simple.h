@@ -95,7 +95,7 @@ typedef struct passinfo
 
 /**
  * struct builtin - Structure to define built-in commands
- 		and their associated functions.
+		and their associated functions.
  * @type: String representing the built-in command.
  * @func: Pointer to the function implementing the built-in command.
  */
