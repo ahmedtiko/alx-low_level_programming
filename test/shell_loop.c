@@ -14,21 +14,21 @@ int hash(info_t *info, char **av)
 
 	while (r != -1 && builtin_ret != -2)
 	{
-		clear_info(info);
+		clear_inf(info);
 		if (is_interactive(info))
 			_puts("$ ");
 		_eputch(BUFF_FLUSH);
 		r = gett_input(info);
 		if (r != -1)
 		{
-			set_info(info, av);
+			set_inf(info, av);
 			builtin_ret = find_built_in(info);
 			if (builtin_ret == -1)
 				find_command(info);
 		}
 		else if (is_interactive(info))
 			_putchar('\n');
-		free_info(info, 0);
+		free_inf(info, 0);
 	}
 	write_history(info);
 	free_info(info, 1);
