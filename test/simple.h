@@ -118,7 +118,7 @@ char *dup_char(char *, int, int);
 char *find_path(info_t *, char *, char *);
 
 /* fn_loop_hsh.c */
-int loophsh(char **);
+int loop_hash(char **);
 
 /* fn_errors.c */
 void _eputs(char *);
