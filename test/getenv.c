@@ -73,6 +73,7 @@ int un_setenv(info_t *info, char *var)
  *
  * Return:
  *	0 on success, 1 on memory allocation failure.
+ */
 int sett_env(info_t *info, char *var, char *value)
 {
 	char *buf = NULL;
