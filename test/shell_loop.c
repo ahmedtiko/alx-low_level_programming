@@ -31,7 +31,7 @@ int hash(info_t *info, char **av)
 		free_inf(info, 0);
 	}
 	write_history(info);
-	free_info(info, 1);
+	free_inf(info, 1);
 	if (!is_interactive(info) && info->status)
 		exit(info->status);
 	if (builtin_ret == -2)
