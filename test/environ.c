@@ -1,10 +1,10 @@
 #include "simple.h"
 
 /**
- * z_env - print the current environment.
- * @info: Structure containing potential args. Used to maintain
- *          constant function prototype.
- * Return: Always 0.
+ * z_env - Displays the current environment variables.
+ * @info: Pointer to the info_t structure containing shell information.
+ *
+ * Return: Always returns 0.
  */
 int z_env(info_t *info)
 {
@@ -13,11 +13,13 @@ int z_env(info_t *info)
 }
 
 /**
- * get_env - get value of an environ variable.
- * @info: Structure containing potential args. Used to maintain
- * @name: env var name.
+ * get_env - Retrieves the value of an environment variable.
+ * @info: Pointer to the info_t structure containing shell information.
+ * @name: The name of the environment variable.
  *
- * Return: the value.
+ * Return:
+ *	A pointer to the value of the environment variable if found,
+ *	NULL if the environment variable is not found.
  */
 char *get_env(info_t *info, const char *name)
 {
@@ -35,11 +37,12 @@ char *get_env(info_t *info, const char *name)
 }
 
 /**
- * set_env - Initialize a new environment variable,
- *             or modify an existing one
- * @info: Structure containing potential args. Used to maintain
- *        constant function prototype.
- *  Return: Always 0.
+ * set_env - Sets or updates an environment variable.
+ * @info: Pointer to the info_t structure containing shell information.
+ *
+ * Return:
+ *	0 on success (environment variable set or updated),
+ *	1 if an error occurs (incorrect number of arguments).
  */
 int set_env(info_t *info)
 {
@@ -54,10 +57,12 @@ int set_env(info_t *info)
 }
 
 /**
- * unset_env - Remove the environment variable.
- * @info: Structure containing potential args. Used to maintain
- *        constant function prototype.
- *  Return: Always 0.
+ * unset_env - Unsets one or more environment variables.
+ * @info: Pointer to the info_t structure containing shell information.
+ *
+ * Return:
+ *	0 on success (environment variables unset),
+ *	1 if an error occurs (too few arguments).
  */
 int unset_env(info_t *info)
 {
@@ -75,10 +80,10 @@ int unset_env(info_t *info)
 }
 
 /**
- * inhabit_env_list - inhabits env linked lists.
- * @info: Structure containing potential arguments. Used to maintain
- *          constant function prototype.
- * Return: Always 0.
+ * inhabit_env_list - inhabits environ. linked lists.
+ * @info: Pointer to the info_t structure containing shell information.
+ *
+ * Return: Always returns 0.
  */
 int inhabit_env_list(info_t *info)
 {

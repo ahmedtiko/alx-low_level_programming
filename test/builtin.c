@@ -1,11 +1,13 @@
 #include "simple.h"
 
 /**
- * is_exit - exits the shell.
- * @info: Struct that holds potential args.
- *         Used to maintain the  const. fnc prototype.
- *  Return: exits with a given exit status.
- *         (0) if != "exit"
+ * is_exit - Checks if the command is an "exit" command.
+ * @info: Pointer to the info_t structure containing shell information.
+ *
+ * Return:
+ *   -1 if the command is not an "exit" command.
+ *   1 if an error occurs (illegal number).
+ *   -2 if the command is a valid "exit" command.
  */
 int is_exit(info_t *info)
 {
@@ -30,10 +32,10 @@ int is_exit(info_t *info)
 }
 
 /**
- * _command - changes current directory of the process.
- * @info: Structure containing potential args. Used to maintain
- *          constant function prototype.
- *  Return: Always 0
+ * _command - Handles the execution of the "cd" command.
+ * @info: Pointer to the info_t structure containing shell information.
+ *
+ * Return: 0 on success, 1 on failure.
  */
 int _command(info_t *info)
 {
@@ -80,10 +82,10 @@ int _command(info_t *info)
 }
 
 /**
- * _help - changes current directory of the process.
- * @info: Structure containing potential args. Used to maintain
- *          constant function prototype.
- *  Return: Always 0
+ * _help - Displays information about built-in commands.
+ * @info: Pointer to the info_t structure containing shell information.
+ *
+ * Return: Always returns 0.
  */
 int _help(info_t *info)
 {

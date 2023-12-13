@@ -1,11 +1,10 @@
 #include "simple.h"
 
 /**
- * z_history - display the history list, one command by line, preceded
- *              with line numbers, starting at 0.
- * @info: Structure containing potential args. Used to maintain.
- *        constant function prototype.
- *  Return: Always 0.
+ * z_history - Displays the command history.
+ * @info: Pointer to the info_t structure containing shell information.
+ *
+ * Return: Always returns 0.
  */
 int z_history(info_t *info)
 {
@@ -14,11 +13,13 @@ int z_history(info_t *info)
 }
 
 /**
- * unset_z_alias - sets alias to string.
- * @info: parameter struct.
- * @str: the string alias.
+ * unset_z_alias - Unsets an alias in the shell.
+ * @info: Pointer to the info_t structure containing shell information.
+ * @str: String representing the alias to be unset.
  *
- * Return: Always 0 on success, 1 on error.
+ * Return:
+ *   0 on success (alias unset),
+ *   1 if an error occurs or alias not found.
  */
 int unset_z_alias(info_t *info, char *str)
 {
@@ -37,11 +38,13 @@ int unset_z_alias(info_t *info, char *str)
 }
 
 /**
- * set_z_alias - sets alias to string.
- * @info: parameter struct.
- * @str: the string alias.
+ * set_z_alias - Sets or updates an alias in the shell.
+ * @info: Pointer to the info_t structure containing shell information.
+ * @str: String representing the alias to be set or updated.
  *
- * Return: Always 0 on success, 1 on error
+ * Return:
+ *   0 on success (alias set or updated),
+ *   1 if an error occurs.
  */
 int set_z_alias(info_t *info, char *str)
 {
@@ -63,9 +66,11 @@ int set_z_alias(info_t *info, char *str)
 
 /**
  * print_z_alias - print an alias string.
- * @node: alias node.
+  * @node: Pointer to the list node representing the alias.
  *
- * Return: Always 0 on success, 1 on error.
+ * Return:
+ *   0 on success (alias printed),
+ *   1 if the alias is NULL.
  */
 int print_z_alias(list_t *node)
 {
@@ -85,14 +90,14 @@ int print_z_alias(list_t *node)
 }
 
 /**
- * z_alias - mimics the alias built-in (man alias).
- * @info: Structure containing potential arguments. Used to maintain
- *          constant function prototype.
- *  Return: Always 0
+ * z_alias - Displays or manages aliases.
+ * @info: Pointer to the info_t structure containing shell information.
+ *
+ * Return: Always returns 0.
  */
 int z_alias(info_t *info)
 {
-	int i = 0;
+	int index = 0;
 	char *p = NULL;
 	list_t *node = NULL;
 
@@ -106,13 +111,13 @@ int z_alias(info_t *info)
 		}
 		return (0);
 	}
-	for (i = 1; info->argv[i]; i++)
+	for (index = 1; info->argv[index]; index++)
 	{
-		p = strn_char(info->argv[i], '=');
+		p = strn_char(info->argv[index], '=');
 		if (p)
-			set_z_alias(info, info->argv[i]);
+			set_z_alias(info, info->argv[index]);
 		else
-			print_z_alias(node_starts_with(info->alias, info->argv[i], '='));
+			print_z_alias(node_starts_with(info->alias, info->argv[index], '='));
 	}
 
 	return (0);

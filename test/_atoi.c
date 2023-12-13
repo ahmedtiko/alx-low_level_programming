@@ -1,9 +1,10 @@
 #include "simple.h"
 
 /**
- * is_interactive - returns true if shell is in the interactive mode.
- * @info: struct address.
- * Return: 1 if interactive mode, 0 if not.
+ * is_interactive - Checks if program is running in interactive mode.
+ * @info: Pointer to the info_t structure containing shell information.
+ *
+ * Return: 1 if in interactive mode, 0 otherwise.
  */
 int is_interactive(info_t *info)
 {
@@ -14,10 +15,11 @@ int is_interactive(info_t *info)
 }
 
 /**
- * is_delimeter - checks if character is a delimeter
- * @c: character check
- * @delim: string delimeter
- * Return: 1 if true, 0 if false
+ * is_delimiter - Checks if a character is a delimiter.
+ * @c: The character to be checked.
+ * @delim: A string containing the delimiters to check against.
+ *
+ * Return: 1 if the character is a delimiter, 0 otherwise.
  */
 int is_delimeter(char c, char *delim)
 {
@@ -28,11 +30,11 @@ int is_delimeter(char c, char *delim)
 }
 
 /**
- *is_alpha - checks for alphabetic character
- *@c: input character
- *Return: 1 if true, 0 if false
+ * is_alpha - Checks if a character is an alphabetic character.
+ * @c: The character to be checked.
+ *
+ * Return: 1 if the character is an alphabetic character, 0 otherwise.
  */
-
 int is_alpha(int c)
 {
 	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
@@ -42,11 +44,11 @@ int is_alpha(int c)
 }
 
 /**
- *_atoi - converts a string to an integer
- *@s: the string to be converted
- *Return: 0 if no numbers in string, converted number otherwise
+ * _atoi - Converts a string to an integer.
+ * @s: The string to be converted.
+ *
+ * Return: The converted integer.
  */
-
 int _atoi(char *s)
 {
 	int index, sign = 1, flag = 0, output;
