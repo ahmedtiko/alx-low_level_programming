@@ -83,8 +83,8 @@ typedef struct passinfo
 	char **environ;
 	int env_changed;
 	int status;
-	char **cmd_buff; 
-	int cmd_buf_type; 
+	char **cmd_buff;
+	int cmd_buf_type;
 	int readfd;
 	int histcount;
 } info_t;
@@ -94,7 +94,8 @@ typedef struct passinfo
 	0, 0, 0}
 
 /**
- * struct builtin - Structure to define built-in commands and their associated functions.
+ * struct builtin - Structure to define built-in commands
+ 		and their associated functions.
  * @type: String representing the built-in command.
  * @func: Pointer to the function implementing the built-in command.
  */
