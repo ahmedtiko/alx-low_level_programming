@@ -24,12 +24,12 @@
 #define CMD_CHAIN	3
 
 /* convert_number() */
-#define CONVERT_LOWERCASE	1
-#define CONVERT_UNSIGNED	2
+#define CONVERT_LC	1
+#define CONVERT_UNSIGN	2
 
 /* if using getline() system -> 1 */
-#define USE_GETLINE 0
-#define USE_STRTOK 0
+#define USE_GET_LINE 0
+#define USE_STR_TOK 0
 
 #define HIST_FILE	".simple_shell_hist"
 #define HIST_MAX	4096
