@@ -117,9 +117,6 @@ int _iscmd(info_t *, char *);
 char *dup_char(char *, int, int);
 char *find_path(info_t *, char *, char *);
 
-/* fn_loop_hash.c */
-int loop_hash(char **);
-
 /* fn_errors.c */
 void _eputs(char *);
 int _eputch(char);
@@ -152,7 +149,7 @@ void ffree(char **);
 void *_realloc(void *, unsigned int, unsigned int);
 
 /* fn_memory.c */
-int bfree(void **);
+int be_free(void **);
 
 /* fn_atoi.c */
 int is_interactive(info_t *);
