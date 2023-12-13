@@ -63,7 +63,7 @@ char *strn_cat(char *dest, char *src, int n)
 }
 
 /**
- * strn_char - Finds the first sign of a char in a string up to a null terminator.
+ * strn_char - Finds first sign of a char in a string up to a null terminator.
  * @s: The string to be searched.
  * @c: The character to search for.
  *
