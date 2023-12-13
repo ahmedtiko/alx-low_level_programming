@@ -18,7 +18,7 @@ int hash(info_t *info, char **av)
 		if (is_interactive(info))
 			_puts("$ ");
 		_eputch(BUFF_FLUSH);
-		r = get_input(info);
+		r = gett_input(info);
 		if (r != -1)
 		{
 			set_info(info, av);
