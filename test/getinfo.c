@@ -19,7 +19,7 @@ void clear_inf(info_t *info)
  */
 void set_inf(info_t *info, char **av)
 {
-	int i = 0;
+	int index = 0;
 
 	info->fname = av[0];
 	if (info->arg)
@@ -35,9 +35,9 @@ void set_inf(info_t *info, char **av)
 				info->argv[1] = NULL;
 			}
 		}
-		for (i = 0; info->argv && info->argv[i]; i++)
+		for (index = 0; info->argv && info->argv[index]; index++)
 			;
-		info->argc = i;
+		info->argc = index;
 
 		replace_alias(info);
 		replace_vars(info);
@@ -66,7 +66,7 @@ void free_inf(info_t *info, int all)
 			free_list(&(info->alias));
 		ffree(info->environ);
 			info->environ = NULL;
-		bfree((void **)info->cmd_buff);
+		be_free((void **)info->cmd_buff);
 		if (info->readfd > 2)
 			close(info->readfd);
 		_putchar(BUFF_FLUSH);
