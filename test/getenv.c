@@ -1,12 +1,12 @@
 #include "simple.h"
 
 /**
- * get_environ - Return the string array copied from our environment.
+ * gett_environ - Return the string array copied from our environment.
  * @info: Structure containing potential arguments. Used to maintain
  *          constant function prototype.
  * Return: Always 0.
  */
-char **get_environ(info_t *info)
+char **gett_environ(info_t *info)
 {
 	if (!info->environ || info->env_changed)
 	{
@@ -18,13 +18,13 @@ char **get_environ(info_t *info)
 }
 
 /**
- * _unsetenv - Remove the environment variable.
+ * un_setenv - Remove the environment variable.
  * @info: Structure containing potential arguments. Used to maintain
  *        constant function prototype.
  *  Return: 1 on delete, 0 otherwise
  * @var: the string env var property.
  */
-int _unsetenv(info_t *info, char *var)
+int un_setenv(info_t *info, char *var)
 {
 	list_t *node = info->env;
 	size_t i = 0;
@@ -50,7 +50,7 @@ int _unsetenv(info_t *info, char *var)
 }
 
 /**
- * _setenv - initialize a new environment variable,
+ * sett_env - initialize a new environment variable,
  *             or modify the existing one.
  * @info: structure containing potential arguments. Used to maintain
  *        constant function prototype.
@@ -58,7 +58,7 @@ int _unsetenv(info_t *info, char *var)
  * @value: String env var value.
  *  Return: Always 0.
  */
-int _setenv(info_t *info, char *var, char *value)
+int sett_env(info_t *info, char *var, char *value)
 {
 	char *buf = NULL;
 	list_t *node;
