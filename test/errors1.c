@@ -91,7 +91,7 @@ int decimal_print(int input, int fd)
 /**
  * cnv_n - Converts a long int to a string represent. in a specified base.
  * @num: The long integer to be converted.
- * @base: The base for the conversion (e.g., 10 for decimal, 16 for hexadecimal).
+ * @base: The base for the conversion (e.g., 10 for decimal, 16 for hexa).
  * @flags: Conversion flags, including CONVERT_UNSIGN and CONVERT_LC.
  *
  * Return:
@@ -126,7 +126,7 @@ char *cnv_n(long int num, int base, int flags)
 }
 
 /**
- * rm_comm - Removes comments from a string by replacing '#' and everything after it with '/0'.
+ * rm_comm - Removes comments from a str by replacing '#' with '/0'.
  * @buf: The string to be processed.
  *
  * Return: void
