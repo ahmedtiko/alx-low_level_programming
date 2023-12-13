@@ -1,12 +1,15 @@
 #include "simple.h"
 
 /**
- * input_buf - buffer chained commands.
- * @info: parameter struct.
- * @buf: address of buffer.
- * @len: address of len var.
+ * input_buf - RD a line of input from the std input and processes it.
+ * @info: Pointer to the info_t structure containing shell information.
+ * @buf: Pointer to the buffer to store the input line.
+ * @len: Pointer to the length of the buffer.
  *
- * Return: bytes read.
+ * Return:
+ *	The number of characters read on success,
+ *	0 if the end of the file is reached,
+ *	or -1 on failure.
  */
 ssize_t input_buf(info_t *info, char **buf, size_t *len)
 {
@@ -45,9 +48,12 @@ ssize_t input_buf(info_t *info, char **buf, size_t *len)
 
 /**
  * gett_input - get a line minus the new line.
- * @info: parameter struct.
+ * @info: Pointer to the info_t structure containing shell information.
  *
- * Return: bytes read.
+ * Return:
+ *	The number of characters read on success,
+ *	0 if the end of the file is reached,
+ *	or -1 on failure.
  */
 ssize_t gett_input(info_t *info)
 {
@@ -89,12 +95,15 @@ ssize_t gett_input(info_t *info)
 }
 
 /**
- * read_buf - reads buffer.
- * @info: parameter struct.
- * @buf: buffer.
- * @i: size.
+ * read_buf - Reads data from a file descriptor into a buffer.
+ * @info: Pointer to the info_t structure containing shell information.
+ * @buf: The buffer to store the read data.
+ * @i: Pointer to the size of the buffer.
  *
- * Return: r.
+ * Return:
+ *	The number of bytes read on success,
+ *	0 if the end of the file is reached,
+ *	or -1 on failure.
  */
 ssize_t read_buf(info_t *info, char *buf, size_t *i)
 {
@@ -109,12 +118,15 @@ ssize_t read_buf(info_t *info, char *buf, size_t *i)
 }
 
 /**
- * gett_line - Get the next line of input from STDIN.
- * @info: Parameter struct.
- * @ptr: Address of a pointer to buffer, preallocated or NULL.
- * @length: Size of preallocated ptr buffer if not NULL.
+ * gett_line - RDs line of input from a file descr. & dynamically alloc. mem. for it.
+ * @info: Pointer to the info_t structure containing shell information.
+ * @ptr: Pointer to the buffer to store the read line.
+ * @length: Pointer to the length of the buffer.
  *
- * Return: s.
+ * Return:
+ *	The total number of characters read on success,
+ *	0 if the end of the file is reached,
+ *	or -1 on failure.
  */
 int gett_line(info_t *info, char **ptr, size_t *length)
 {
@@ -156,10 +168,13 @@ int gett_line(info_t *info, char **ptr, size_t *length)
 }
 
 /**
- * signin_Handler- blocks the ctrl-C(COPY).
- * @sig_num: the signal number.
+ * signin_Handler- blocks the copy command shortcut.
+ * @sig_num: The signal number (unused).
  *
- * Return: void.
+ * Description:
+ *   Handles the SIGINT signal by printing a new line and the shell prompt.
+ *
+ * Return: void
  */
 void signin_Handler(__attribute__((unused))int sig_num)
 {
