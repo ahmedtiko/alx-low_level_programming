@@ -137,7 +137,7 @@ void fork_command(info_t *info)
 	{
 		if (execve(info->path, info->argv, get_environ(info)) == -1)
 		{
-			free_info(info, 1);
+			free_inf(info, 1);
 			if (errno == EACCES)
 				exit(126);
 			exit(1);
