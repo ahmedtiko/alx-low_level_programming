@@ -135,7 +135,7 @@ void fork_command(info_t *info)
 	}
 	if (child_pid == 0)
 	{
-		if (execve(info->path, info->argv, get_environ(info)) == -1)
+		if (execve(info->path, info->argv, gett_environ(info)) == -1)
 		{
 			free_inf(info, 1);
 			if (errno == EACCES)
