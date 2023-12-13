@@ -1,10 +1,10 @@
 #include "simple.h"
 
 /**
- *_eputs - prints the input string.
- * @str: the string will be printed.
+ * _eputs - Prints a string to the standard error output.
+ * @str: The string to be printed.
  *
- * Return: Nothing.
+ * Return: void
  */
 void _eputs(char *str)
 {
@@ -20,11 +20,12 @@ void _eputs(char *str)
 }
 
 /**
- * _eputch - write the character c to stderr.
- * @c: The character to be print.
+ * _eputch - Writes a character to the standard error output.
+ * @c: The character to be written.
  *
- * Return: On success 1.
- * On error, -1 is returned, and errno is set appropriately.
+ * Return:
+ *	1 on success,
+ *	0 on failure.
  */
 int _eputch(char c)
 {
@@ -42,12 +43,13 @@ int _eputch(char c)
 }
 
 /**
- * _putfds - writes the character c to given fd
- * @c: The character to print.
- * @fd: The filedescriptor to write to.
+ * _putfds - Writes a character to the specified file descriptor.
+ * @c: The character to be written.
+ * @fd: The file descriptor to write to.
  *
- * Return: On success 1.
- * On error, -1 is returned, and errno is set appropriately.
+ * Return:
+ *	1 on success,
+ *	0 on failure.
  */
 int _putfds(char c, int fd)
 {
@@ -65,11 +67,13 @@ int _putfds(char c, int fd)
 }
 
 /**
- *_putsfds - prints an input string.
- * @str: the string to be printed.
- * @fd: the filedescriptor to write to
+ * _putsfds - Writes a string to the specified file descriptor.
+ * @str: The string to be written.
+ * @fd: The file descriptor to write to.
  *
- * Return: the no. of chars put.
+ * Return:
+ *	The number of characters written on success,
+ *	0 if the string is NULL or on failure.
  */
 int _putsfds(char *str, int fd)
 {
