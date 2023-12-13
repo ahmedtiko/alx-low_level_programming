@@ -27,8 +27,6 @@
 #define CONVERT_LC	1
 #define CONVERT_UNSIGN	2
 
-
-#define HIST_FILE	".simple_shell_hist"
 #define HIST_MAX	4096
 
 extern char **environ;
@@ -48,26 +46,25 @@ typedef struct liststr
 } list_t;
 
 /**
- *struct passinfo - contains pseudo-arguements to pass into a function,
- *		allowing uniform prototype for function pointer struct
- *@arg: a string generated from getline containing arguements
- *@argv: an array of strings generated from arg
- *@path: a string path for the current command
- *@argc: the argument count
- *@line_count: the error count
- *@err_num: the error code for exit()s
- *@linecount_flag: if on count this line of input
- *@fname: the program filename
- *@env: linked list local copy of environ
- *@environ: custom modified copy of environ from LL env
- *@history: the history node
- *@alias: the alias node
- *@env_changed: on if environ was changed
- *@status: the return status of the last exec'd command
- *@cmd_buf: address of pointer to cmd_buf, on if chaining
- *@cmd_buf_type: CMD_type ||, &&, ;
- *@readfd: the fd from which to read line input
- *@histcount: the history line number count
+ * struct passinfo - Structure to hold information for the shell program.
+ * @arg: Current command line argument.
+ * @argv: Array of command line arguments.
+ * @path: Path associated with the command.
+ * @argc: Number of command line arguments.
+ * @line_count: Count of lines processed.
+ * @err_num: Error number if an error occurs.
+ * @linecount_flag: Flag to indicate if line count needs to be incremented.
+ * @fname: File name associated with the command.
+ * @env: Linked list for environment variables.
+ * @history: Linked list to store command history.
+ * @alias: Linked list to store command aliases.
+ * @environ: Array of environment variables.
+ * @env_changed: Flag to indicate if the environment has been modified.
+ * @status: Exit status of the last executed command.
+ * @cmd_buff: Pointer to command buffer; chain buffer for memory management.
+ * @cmd_buf_type: Type of command buffer (CMD_type ||, &&, ;).
+ * @readfd: File descriptor for reading input.
+ * @histcount: History count.
  */
 typedef struct passinfo
 {
@@ -86,8 +83,8 @@ typedef struct passinfo
 	int env_changed;
 	int status;
 
-	char **cmd_buff; /* point to commandd ; chain buff for memory management */
-	int cmd_buf_type; /* CMD_type ||, &&, ; */
+	char **cmd_buff; 
+	int cmd_buf_type; 
 	int readfd;
 	int histcount;
 } info_t;
