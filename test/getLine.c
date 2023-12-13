@@ -109,7 +109,7 @@ ssize_t read_buf(info_t *info, char *buf, size_t *i)
 }
 
 /**
- * _getline - Get the next line of input from STDIN.
+ * gett_line - Get the next line of input from STDIN.
  * @info: Parameter struct.
  * @ptr: Address of a pointer to buffer, preallocated or NULL.
  * @length: Size of preallocated ptr buffer if not NULL.
@@ -156,7 +156,7 @@ int gett_line(info_t *info, char **ptr, size_t *length)
 }
 
 /**
- * sigintHandler - blocks the ctrl-C(COPY).
+ * signin_Handler- blocks the ctrl-C(COPY).
  * @sig_num: the signal number.
  *
  * Return: void.
