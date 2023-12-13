@@ -11,13 +11,18 @@
 ssize_t input_buf(info_t *info, char **buf, size_t *len)
 {
 	ssize_t r = 0;
-	
+	size_t len_p = 0;
+
 	if (!*len)
 	{
 		free(*buf);
 		*buf = NULL;
 		signal(SIGINT, signin_Handler);
-
+#if USE_GETLINE
+		r = getline(buf, &len_p, stdin);
+#else
+		r = gett_line(info, buf, &len_p);
+#endif
 		if (r > 0)
 		{
 			if ((*buf)[r - 1] == '\n')
