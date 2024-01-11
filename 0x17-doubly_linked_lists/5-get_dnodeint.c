@@ -22,4 +22,4 @@ dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
 		i++;
 	}
 
-	return (NULL) /* Node at the specified index does not exist */
+	return (NULL); /* Node at the specified index does not exist */
