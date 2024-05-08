@@ -1,5 +1,7 @@
 #include "search_algos.h"
 
+#define MIN(a, b) (((a) < (b)) ? (a) : (b))
+
 /**
  * jump_search - Searches for a value in a sorted array of integers using
  * the Jump search algorithm.
@@ -17,12 +19,12 @@ int jump_search(int *array, size_t size, int value)
 	step = sqrt(size);
 	prev = 0;
 
-	if (array == -1)
+	if (array == NULL)
 		return (-1);
 
 	printf("Value checked array[%d] = [%d]\n", prev, array[prev]);
 
-	while (array[min(step, size) - 1] < value)
+	while (array[MIN(step, size) - 1] < value)
 	{
 		prev = step;
 		step += sqrt(size);
